@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { Route, Router, Routes } from 'react-router-dom';
 import './App.css';
+import MovieSection from './Components/MovieSection';
+import MovieSectionM from './Components/MovieSectionM';
+import MovieSectionT from './Components/MovieSectionT';
+import MovieSectionH from './Components/MovieSectionH';
+import NavbarMUI from './Components/NavbarMUI';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar/>
+    {/* <NavbarMUI/> */}
+    <hr className='middle'></hr>
+
+    <Routes>
+
+    <Route path='/' element={<MovieSection />}/>
+
+    <Route path='/malayalam' element={<MovieSectionM />}/>
+
+    <Route path='/tamil' element={<MovieSectionT />}/>
+
+    <Route path='/hindi' element={<MovieSectionH />}/>
+
+    </Routes>
+    
+    </>
   );
 }
 
